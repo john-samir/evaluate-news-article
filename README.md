@@ -21,7 +21,7 @@ npm test
 
 4. This web tool will display Only the below parts from the sentiment analysis.
 ```
-- Text (**Only** the first text exists in the blog/article URL)
+- Text (Only the first text exists in the blog/article URL)
 - Score Tag
 - Agreement
 - Subjectivity
