@@ -5,9 +5,9 @@ When a user submits a URL of an article or a blog, the web page then dispalys se
 
 ## Notes
 
-1. You can run this tool either using Production mode or Development mode
-   Development mode run on port 8080 (note that to get the api result, you have to start the server by using command npm start)
-   Production mode run on port 8081
+1. You can run this tool either using Production mode or Development mode.
+   - Development mode runs on port 8080 (Note: to get the results you have to start the server by using command npm start).
+   - Production mode runs on port 8081
 ```
 npm run build-dev
 npm run build-prod
