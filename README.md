@@ -1,34 +1,51 @@
-## Article Or Blog Sentiment Discovery Web Tool
+## MyReads Web Tool
 
-This web tool allows users to run **Natural Language Processing (NLP)** on **Articles or Blogs** that are found on other websites. 
-When a user submits a URL of an article or a blog, the web page then dispalys sentiment analysis using [meaningcloud API](https://www.meaningcloud.com/products/sentiment-analysis) api.
+This web tool allows users to manage their books reading by specifying which books are they currently reading, want to read, and have already read.
+Also allows users to search for new book and to add to those 3 categories.
+
+This tool is implemented using React. 
+the backend of this tools is provided by Udacity team.
 
 ## Notes
 
-1. You can run this tool either using Production mode or Development mode.
-   - Development mode runs on port 8080 (Note: to get the results you have to start the server by using command npm start).
-   - Production mode runs on port 8081
+1. to be able to use this tool, you have to run below commands that will install all project dependencies and will open the server
 ```
-npm run build-dev
-npm run build-prod
+npm install
 npm start
 ```
-2. This web tool also has a unit test packages installed. To test all functionalities of this tool you can use the below command
-```
-npm test
-```
-3. Please note that you have to enter a **valid blog/article URL** in order to get the expected results, otherwise, an alert will show and no result will be returned.
 
-4. This web tool will display Only the below parts from the sentiment analysis.
+2. This web tool is simply consists of 2 pages as follows: 
+- **Main Page:** Contains books categoried as ("Currently Reading", "Want to Read", "Read")
+- **Search Page:** Where you can search for new books and add it to any of the 3 categories
+
+3. An **additional functionality** has been added to give you more details about each book. What you have to do is to click on the **circle green button** attached at the **Bottom Left** of each book.
+
+4. Only books title, authors, and image are displayed for each book. If you need more details you can press on the button that is mentioned in the previous point.
+
+## React Components
 ```
-- Text (Only the first text exists in the blog/article URL)
-- Score Tag
-- Agreement
-- Subjectivity
-- Confidence
-- Irony
+- BooksPage
+- BookShelfList
+- BookShelf
+- BooksList
+- Book
+- BookShelfChanger
+- SearchPage
 ```
+
+## React Components hierarchy
+```bash
+├── App.js
+    ├── BooksPage.js
+    │   └── BookShelfList.js
+    │       └── BookShelf.js
+    │           └── BooksList.js
+    │               └── Book.js
+    │                   └── BookShelfChanger.js
+    └── SearchPage.js
+```
+
 
 ## Copyrights
 
-This tool is implemented by **John Ghabrial** using a provided template by Udacity team as part of a project  for **"Front End Web Development Advanced Nanodegree Program"** course
+This tool is implemented by **John Ghabrial** using template and API that have been given by Udacity team as part of a project  for **"Front End Web Development Advanced Nanodegree Program"** course
