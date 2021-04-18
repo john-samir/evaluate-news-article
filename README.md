@@ -1,51 +1,67 @@
-## MyReads Web Tool
+## Would you rather game
 
-This web tool allows users to manage their books reading by specifying which books are they currently reading, want to read, and have already read.
-Also allows users to search for new book and to add to those 3 categories.
+Would you rather game is a well known game that allows the user to answer questions with two options.
 
-This tool is implemented using React. 
-the backend of this tools is provided by Udacity team.
+This tool is implemented using React for UI, Router and Redux for state management. 
+the backend simulator of this tool is provided by Udacity team.
 
 ## Notes
 
-1. to be able to use this tool, you have to run below commands that will install all project dependencies and will open the server
+1. to be able to use this tool, you have to run below commands that will install all project dependencies and will run the game
 ```
 npm install
 npm start
 ```
 
-2. This web tool is simply consists of 2 pages as follows: 
-- **Main Page:** Contains books categoried as ("Currently Reading", "Want to Read", "Read")
-- **Search Page:** Where you can search for new books and add it to any of the 3 categories
+2. This web tool is simply consists of multiple pages as follows: 
+- **Sign In:** The user can login in order to play the game.
+- **Home Page:** Where you can see all Polls/Questions (un-answered, answered).
+- **Poll Details:** Where you can either answer the Poll (if not answered) or see your answer with a comparison of all users votes/answers, percentage, ..etc.
+- **New Question:** Where you can add a new question/Poll.
+- **Leaderboard:** where you can see the ranking of all users based on the number of answered polls and the number of polls created by each user.
 
-3. An **additional functionality** has been added to give you more details about each book. What you have to do is to click on the **circle green button** attached at the **Bottom Left** of each book.
-
-4. Only books title, authors, and image are displayed for each book. If you need more details you can press on the button that is mentioned in the previous point.
+3. Below are all available functionality:
+- Login, Logout
+- Create New Poll
+- Answer Polls
+- See Leaderboard 
+- See answered, unanswered polls
 
 ## React Components
 ```
-- BooksPage
-- BookShelfList
-- BookShelf
-- BooksList
-- Book
-- BookShelfChanger
-- SearchPage
+- App
+- Dashboard
+- Leaderboard
+- Loading
+- Nav
+- NewQuestion
+- Poll
+- PollDetails
+- SignIn
 ```
 
-## React Components hierarchy
-```bash
-├── App.js
-    ├── BooksPage.js
-    │   └── BookShelfList.js
-    │       └── BookShelf.js
-    │           └── BooksList.js
-    │               └── Book.js
-    │                   └── BookShelfChanger.js
-    └── SearchPage.js
+## Middlewares
+```
+- logger: this is used to log every action with it's new state.
+- index: this is used to configure all middlewares (thunk, logger) 
 ```
 
+## Reducers
+```
+- authedUser: handles all actions related to authed user (SET_AUTHED_USER).
+- users: handles all actions related to users (RECEIVE_USERS, ADD_QUESTION_TO_USER, ADD_QUESTION_ANSWER_TO_USER).
+- questions: handles all actions related to questions (RECEIVE_QUESTIONS, ADD_QUESTION, ADD_QUESTION_ANSWER).
+- index: combine all reducers (authedUser, users, questions).
+```
+
+## Actions
+```
+- authedUser: contains all action functions that handle authed user (setAuthedUser, handleSignIn, handleSignOut).
+- users: contains all action functions that handle users (receiveUsers, addQuestionToUser, addQuestionAnswerToUser).
+- questions: contains all action functions that handle questions (receiveQuestions, handleAddNewQuestion, handleSubmitQuestionAnswer).
+- shared: handle shared actions (handleInitialData).
+```
 
 ## Copyrights
 
-This tool is implemented by **John Ghabrial** using template and API that have been given by Udacity team as part of a project  for **"Front End Web Development Advanced Nanodegree Program"** course
+This game is implemented by **John Ghabrial** using an API file that was given by Udacity team as part of a project for **"Front End Web Development Advanced Nanodegree Program"** course.
