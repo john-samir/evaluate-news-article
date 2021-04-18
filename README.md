@@ -2,8 +2,9 @@
 
 Would you rather game is a well known game that allows the user to answer questions with two options.
 
-This tool is implemented using React for UI, Router and Redux for state management. 
-the backend simulator of this tool is provided by Udacity team.
+This tool is implemented using React for UI, Router and Redux for state management.
+
+The backend simulator of this tool is provided by Udacity team.
 
 ## Notes
 
